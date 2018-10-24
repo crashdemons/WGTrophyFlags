@@ -1,0 +1,10 @@
+name: WorldGuardTrophyFlags
+version: ${project.version}
+description: Adds flags managing trophy drop plugins to WorldGuard
+author: crashdemons
+website: https://github.com/crashdemons
+api-version: 1.13
+depend: [ WorldGuard ]
+softdepend: [ PlayerHeads, MiningTrophies ]
+
+main: com.github.crashdemons.wgtrophyflags.WGTrophyFlagsPlugin
