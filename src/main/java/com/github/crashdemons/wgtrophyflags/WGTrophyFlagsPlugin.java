@@ -116,7 +116,7 @@ public class WGTrophyFlagsPlugin extends JavaPlugin implements Listener {
             if(DHEnabled) getLogger().info("DropHeads support detected");
             return true;
         }else{
-            getLogger().warning("Neither PlayerHeads or MiningTrophies plugins are present - disabling plugin");
+            getLogger().warning("Neither PlayerHeads, MiningTrophies, nor DropHeads plugins are present - disabling plugin");
             this.getServer().getPluginManager().disablePlugin(this);
             return false;
         }
