@@ -26,6 +26,7 @@ public class WGTrophyFlagsPlugin extends JavaPlugin implements Listener {
     
     private boolean PHEnabled=false;
     private boolean MTEnabled=false;
+    private boolean DHEnabled=false;
     
     
     public static final StateFlag FLAG_BEHEADTROPHY = new StateFlag("behead-trophy", true);
@@ -34,6 +35,7 @@ public class WGTrophyFlagsPlugin extends JavaPlugin implements Listener {
     
     
     
+    public boolean hasDropHeads(){return DHEnabled;}
     public boolean hasPlayerheads(){return PHEnabled;}
     public boolean hasMiningtrophies(){return MTEnabled;}
     public WorldGuard getWorldGuard(){ return wg; }
@@ -59,6 +61,12 @@ public class WGTrophyFlagsPlugin extends JavaPlugin implements Listener {
     private boolean isMTAvailable(){
         if(this.getServer().getPluginManager().getPlugin("MiningTrophies") != null){
             return classExists("com.github.crashdemons.miningtrophies.events.BlockDropTrophyEvent");
+        }
+        return false;
+    }
+    private boolean isDHAvailable(){
+        if(this.getServer().getPluginManager().getPlugin("DropHeads") != null){
+            return classExists("net.evmodder.DropHeads.events.EntityBeheadEvent");
         }
         return false;
     }
@@ -100,10 +108,12 @@ public class WGTrophyFlagsPlugin extends JavaPlugin implements Listener {
     private boolean pluginInit(){
         this.PHEnabled=isPHAvailable();
         this.MTEnabled=isMTAvailable();
+        this.DHEnabled=isDHAvailable();
         
-        if(PHEnabled || MTEnabled){
+        if(PHEnabled || MTEnabled || DHEnabled){
             if(PHEnabled) getLogger().info("PlayerHeads support detected");
             if(MTEnabled) getLogger().info("MiningTrophies support detected");
+            if(DHEnabled) getLogger().info("DropHeads support detected");
             return true;
         }else{
             getLogger().warning("Neither PlayerHeads or MiningTrophies plugins are present - disabling plugin");
@@ -126,6 +136,9 @@ public class WGTrophyFlagsPlugin extends JavaPlugin implements Listener {
         }
         if(MTEnabled){
             getServer().getPluginManager().registerEvents(new MTListener(this), this);
+        }
+        if(DHEnabled){
+            getServer().getPluginManager().registerEvents(new DHListener(this), this);
         }
         getLogger().info("Enabled.");
     }
