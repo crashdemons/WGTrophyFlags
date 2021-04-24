@@ -17,7 +17,6 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityEvent;
 import org.shininet.bukkit.playerheads.events.LivingEntityDropHeadEvent;
 
 /**
@@ -42,6 +41,7 @@ public class PHListener implements Listener{
         //BukkitAdapter.adapt(player)
         
         com.sk89q.worldedit.util.Location wgLoc = BukkitAdapter.adapt(loc);
+        @SuppressWarnings("unused")
         com.sk89q.worldedit.entity.Entity wgBeheadee = BukkitAdapter.adapt(beheadee);
         LocalPlayer wgBeheader = null;
         if(beheader!=null){

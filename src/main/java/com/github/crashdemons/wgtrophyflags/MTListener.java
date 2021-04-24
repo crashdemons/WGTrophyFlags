@@ -37,6 +37,7 @@ public class MTListener implements Listener{
         if(!(event instanceof BlockDropTrophyEvent)) return;
         BlockDropTrophyEvent trophyevent = (BlockDropTrophyEvent) event;
         Block block = trophyevent.getBlock();
+        @SuppressWarnings("unused")
         ItemStack reward = trophyevent.getDrop();
         Player rewardee = trophyevent.getPlayer();
         Location loc = block.getLocation();
