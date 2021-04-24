@@ -31,7 +31,7 @@ public class DHListener implements Listener{
     
     @EventHandler
     public void onEntityDropHeadEvent(EntityBeheadEvent event){
-        if(!plugin.hasPlayerheads()) return;
+        if(!plugin.hasDropHeads()) return;
         if(!plugin.isEnabled()) return;
         if(!(event instanceof EntityBeheadEvent)) return;
         EntityBeheadEvent beheading = (EntityBeheadEvent) event;
