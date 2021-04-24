@@ -7,6 +7,7 @@ Requires WorldGuard 7 and a Bukkit 1.13+ server
 To apply the flags you need one or more of the following plugins to control:
 * [Meiskam's PlayerHeads](https://dev.bukkit.org/projects/player-heads) 3.12.13 or higher (PlayerHeads 4 is supported)
 * [crashdemons' MiningTrophies](https://dev.bukkit.org/projects/miningtrophies) 0.6.1 or higher
+* [EvModders' DropHeads](https://dev.bukkit.org/projects/dropheads) *[which versions?]*
 
 ## Flags
 * `behead-trophy` allow or deny beheading in the region.
