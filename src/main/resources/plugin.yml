@@ -5,6 +5,6 @@ author: crashdemons
 website: https://github.com/crashdemons
 api-version: 1.13
 depend: [ WorldGuard ]
-softdepend: [ PlayerHeads, MiningTrophies ]
+softdepend: [ PlayerHeads, MiningTrophies, DropHeads ]
 
 main: com.github.crashdemons.wgtrophyflags.WGTrophyFlagsPlugin

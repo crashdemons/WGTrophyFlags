@@ -79,7 +79,7 @@
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
             <artifactId>worldguard-bukkit</artifactId>
-            <version>7.0.4-SNAPSHOT</version>
+            <version>LATEST</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.bukkit</groupId>
